@@ -1,0 +1,239 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[ 1,  2,  3,  4,  5],\n",
+       "       [ 6,  7,  8,  9, 10],\n",
+       "       [11, 12, 13, 14, 15],\n",
+       "       [16, 17, 18, 19, 20],\n",
+       "       [21, 22, 23, 24, 25],\n",
+       "       [26, 27, 28, 29, 30],\n",
+       "       [31, 32, 33, 34, 35],\n",
+       "       [36, 37, 38, 39, 40],\n",
+       "       [41, 42, 43, 44, 45],\n",
+       "       [46, 47, 48, 49, 50]])"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "#task 6 Create two arrays a and b, stack these two arrays vertically \n",
+    "a = np.arange(1,26).reshape(5,5) #shaped 5 by 5\n",
+    "b = np.arange(26,51).reshape(5,5)\n",
+    "np.vstack((a,b)) #vstack used to stack vertically"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 590  605  620  635  650]\n",
+      " [1490 1530 1570 1610 1650]\n",
+      " [2390 2455 2520 2585 2650]\n",
+      " [3290 3380 3470 3560 3650]\n",
+      " [4190 4305 4420 4535 4650]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#task6 Use the np.dot \n",
+    "a = np.arange(1,26).reshape(5,5)\n",
+    "b = np.arange(26,51).reshape(5,5)\n",
+    "c = np.dot(a, b)#multiplies matrix a and matrix b\n",
+    "#R1 by C1; R1 by C2; R1 by C3; R1 by C4; R1 by C5\n",
+    "#(1x26)+(2x31)+(3x36)+(4x41)+(5x46)=590 etc\n",
+    "print(c)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "63000\n"
+     ]
+    }
+   ],
+   "source": [
+    "#task6 np.sum to calculate total of matrix c.\n",
+    "total_sum = np.sum(c)\n",
+    "print(total_sum)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = [1,1,1,2,2,2,3,3,3] #list a\n",
+    "b = [1,2,3,1,2,3,1,2,3,] #list b\n",
+    "\n",
+    "print(a + b)  \n",
+    "# lists the elements at the end of the list "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2 3 4 3 4 5 4 5 6]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#whereas arrays add list a and b together\n",
+    "a = np.array([1,1,1,2,2,2,3,3,3]) #array a\n",
+    "b = np.array([1,2,3,1,2,3,1,2,3,]) #array b\n",
+    "\n",
+    "print(a + b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 1 1 2 2 2 3 3 3 1 2 3 1 2 3 1 2 3]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "array1 = np.array([1,1,1,2,2,2,3,3,3])\n",
+    "array2 = np.array([1,2,3,1,2,3,1,2,3])\n",
+    "array = np.concatenate((array1, array2))\n",
+    "\n",
+    "print(array)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 3 4 5]\n",
+      "[7 8 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# In two arrays a ( 1,2,3,4,5) and b ( 4,5,6,7,8,9) – remove all repeating items present in array b \n",
+    "\n",
+    "a = np.array([1,2,3,4,5])\n",
+    "b = np.array([4,5,6,7,8,9])\n",
+    "print (a)\n",
+    "print(b[3:])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[6]\n",
+      "[6 7 8 9]\n",
+      "36\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Get all items between 5 and 10 from a and b and sum them together.\n",
+    "a = np.array([1,2,3,4,5,6])\n",
+    "b = np.array([4,5,6,7,8,9])\n",
+    "\n",
+    "a_new = (a[5:]) #slice data from position 5 onwards\n",
+    "print(a_new) #6\n",
+    "b_new = (b[2:])#slice data from position 2 onwards\n",
+    "print(b_new)#6,7,8,9\n",
+    "\n",
+    "sum_a = np.sum(a_new)#sum of all values <5\n",
+    "sum_b = np.sum(b_new) #sum of all values <5\n",
+    "result = sum_a+sum_b #adds the sum of all values between 5 and 10\n",
+    "print(result) #outputs sum of values between 5 and 10 which is 36\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
